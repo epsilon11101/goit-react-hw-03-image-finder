@@ -1,7 +1,28 @@
 import React, { Component } from "react";
 
-import classes from "./Button.module.css";
+class Button extends Component {
+  state = {
+    pageNumber: 1,
+  };
 
-class Button extends Component {}
+  onClickHandler = () => {
+    this.setState(
+      (prevState) => {
+        return { pageNumber: prevState.pageNumber + 1 };
+      },
+      () => {
+        this.props.changePage(this.state.pageNumber);
+      }
+    );
+  };
+
+  render() {
+    return (
+      <button type="button" onClick={this.onClickHandler}>
+        Load more
+      </button>
+    );
+  }
+}
 
 export default Button;
