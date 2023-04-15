@@ -37,9 +37,7 @@ class ImageGallery extends Component {
     } catch (error) {
       this.error();
     } finally {
-      if (data.length === 0) {
-        this.warning();
-      }
+      console.log(data);
     }
   }
 
