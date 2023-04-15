@@ -28,13 +28,18 @@ class ImageGallery extends Component {
     });
 
   async componentDidMount() {
-    const data = await this.fetchingData();
-    if (data.length === 0) {
-      this.warning();
+    try {
+      const data = await this.fetchingData();
+      this.setState({
+        fetchData: [...data],
+      });
+    } catch (error) {
+      this.error();
+    } finally {
+      if (data.length === 0) {
+        this.warning();
+      }
     }
-    this.setState({
-      fetchData: [...data],
-    });
   }
 
   async componentDidUpdate(prevProps, prevState) {
