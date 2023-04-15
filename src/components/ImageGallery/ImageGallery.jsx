@@ -28,8 +28,9 @@ class ImageGallery extends Component {
     });
 
   async componentDidMount() {
+    let data = [];
     try {
-      const data = await this.fetchingData();
+      data = await this.fetchingData();
       this.setState({
         fetchData: [...data],
       });
