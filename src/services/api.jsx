@@ -2,7 +2,7 @@ import axios from "axios";
 
 class API {
   constructor() {
-    this.KEY = import.meta.env.VITE_PIXKEY;
+    this.KEY = "32757716-8b0663aad2250c5619ecf300f";
     this.URL = `https://pixabay.com/api/?key=${this.KEY}`;
 
     this.options = {
